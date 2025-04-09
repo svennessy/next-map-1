@@ -2,9 +2,13 @@
 
 import MapComponent from "@/components/mapComponent"
 
-export default function MapRender() {
+interface MapProps {
+  attributes: string
+}
+
+export default function MapRender({...props}: MapProps) {
   return (
-    <div className="w-full p-4">
+    <div className={`${props.attributes}`}>
       <MapComponent />
     </div>
   )

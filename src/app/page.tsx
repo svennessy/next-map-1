@@ -1,6 +1,6 @@
 import Image from "next/image"
 import DateFormat from "@/components/dateFormat.js"
-import Link from "next/link"
+// import Link from "next/link"
 
 // https://nextjs.org/learn/pages-router/data-fetching-implement-getstaticprops
 
@@ -17,14 +17,17 @@ export default function Home() {
         alt="Harry's House"
       />
       <DateFormat dateString={dateNow} />
-      <div className="p-4">
+    </div>
+  )
+}
+
+{
+  /* <div className="p-4">
         <Link
           href={"/map"}
           className="bg-emerald-400 px-4 py-2 rounded-2xl cursor-pointer"
         >
           Go to Map
         </Link>
-      </div>
-    </div>
-  )
+      </div> */
 }

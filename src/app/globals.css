@@ -1,6 +1,6 @@
 @import "tailwindcss";
-
-:root {
+@import "https://unpkg.com/maplibre-gl@<YOUR_MAPLIBRE_VERSION>/dist/maplibre-gl.css":
+  root {
   --background: #ffffff;
   --foreground: #171717;
 }

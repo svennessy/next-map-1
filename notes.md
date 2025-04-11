@@ -18,5 +18,21 @@ Render modal to add points to map:
 1. - [ ] Create pool of marker lat/long
 2. - [ ] Client side modal to add lat/long
 3. - [x] Determine lat/long on click
+4. - [ ] Click and drag only one marker per pet
+5. - [ ] 
+
+ETC:
+1. - [ ] Issue with geolocation access on network during dev mode. Use ngrok to tunnel ip address and force chrome on ios to prompt an allow access modal 
+2. - [ ] Safari can eat shit
+3. - [ ] Potential issue with map coords reflecting to closest comcast cluster on windows network during dev
+4. - [ ] 
+5. - [ ] 
+
+
+
+
+1. - [ ] 
+2. - [ ] 
+3. - [ ] 
 4. - [ ] 
 5. - [ ] 

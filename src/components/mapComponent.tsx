@@ -95,8 +95,7 @@ const MapComponent: React.FC = () => {
             longitude={currentLocation.longitude}
             latitude={currentLocation.latitude}
           >
-            
-          {/* Current location marker */}
+            {/* Current location marker */}
           </Marker>
 
           {/* Render additional markers */}

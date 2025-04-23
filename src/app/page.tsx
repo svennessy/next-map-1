@@ -1,19 +1,15 @@
 "use client"
 
 import Image from "next/image"
-//import dynamic from "next/dynamic"
-import DateTimeRender from "@/components/dateTimeRender"
 import { useState, useEffect } from "react"
-import LocationDisplay from "@/components/LocationDisplay"
-
-/* const LocationModal = dynamic(() => import("../components/locationModal"), {
-  ssr: false,
-}) */
+import { LocationDisplay } from "@/components/LocationDisplay"
+import { CoordinatesDisplay } from "@/components/CoordinatesDisplay"
+import DateTimeRender from "@/components/DateTimeRender"
 
 // https://nextjs.org/learn/pages-router/data-fetching-implement-getstaticprops
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [now, setNow] = useState<Date | null>(null)
 
   const customFormatOptions: Intl.DateTimeFormatOptions = {
@@ -44,30 +40,24 @@ export default function Home() {
       {now && <DateTimeRender date={now} formatOptions={customFormatOptions} />}
 
       <div className="flex w-8/12 h-6/12 p-4 justify-center bg-cyan-600">
+
         <button
-          className="self-center py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 transition"
-          onClick={() => setShowModal(true)}
+          onClick={() => setIsModalOpen(true)}
+          className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
         >
-          Add Location
+          Open Modal
         </button>
 
-        {showModal && <LocationDisplay />}
-
-
-        {/* Conditionally render the modal 
-        {showModal && <LocationModal onClose={() => setShowModal(false)} />}*/}
+        <LocationDisplay
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        >
+          <h1>Modal Name</h1>
+          <CoordinatesDisplay />
+        </LocationDisplay>
+      
       </div>
     </div>
   )
 }
 
-{
-  /* <div className="p-4">
-        <Link
-          href={"/map"}
-          className="bg-emerald-400 px-4 py-2 rounded-2xl cursor-pointer"
-        >
-          Go to Map
-        </Link>
-      </div> */
-}

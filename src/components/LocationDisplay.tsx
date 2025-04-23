@@ -1,18 +1,44 @@
-// components/LocationDisplay.tsx
-"use client";
+import { useEffect, useRef } from "react"
 
-import { useCurrentLocation } from "@/hooks/useCurrentLocation";
+interface ModalProps {
+  isOpen: boolean
+  onClose: () => void
+  children: React.ReactNode
+}
 
-export default function LocationDisplay() {
-  const { coordinates, error } = useCurrentLocation();
+export const LocationDisplay: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  children,
+}) => {
+  const modalRef = useRef<HTMLDivElement>(null)
 
-  if (error) return <p>Error: {error}</p>;
-  if (!coordinates) return <p>Getting location...</p>;
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        onClose()
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOutsideClick)
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick)
+    }
+  }, [isOpen, onClose])
+
+  if (!isOpen) return null
 
   return (
-    <div>
-      <p>Latitude: {coordinates.latitude}</p>
-      <p>Longitude: {coordinates.longitude}</p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+      <div
+        ref={modalRef}
+        className="bg-white flex flex-col items-center justify-center rounded-lg shadow-xl p-6 w-full max-w-md "
+      >
+        {children}
+      </div>
     </div>
-  );
+  )
 }

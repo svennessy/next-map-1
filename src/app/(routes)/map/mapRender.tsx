@@ -1,6 +1,6 @@
 "use client"
 
-import MapComponent from "@/components/mapComponent"
+import MapComponent from "@/components/MapComponent"
 
 interface MapProps {
   attributes: string

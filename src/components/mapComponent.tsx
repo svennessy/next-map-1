@@ -1,5 +1,3 @@
-/* import Map, { Marker, MapLayerMouseEvent } from "react-map-gl/maplibre"
-import { useState, useEffect } from "react" */
 import { useState, useEffect } from "react"
 import Map, { Marker } from "react-map-gl/maplibre"
 import "maplibre-gl/dist/maplibre-gl.css"
@@ -97,7 +95,8 @@ const MapComponent: React.FC = () => {
             longitude={currentLocation.longitude}
             latitude={currentLocation.latitude}
           >
-            {/* Current location marker */}
+            
+          {/* Current location marker */}
           </Marker>
 
           {/* Render additional markers */}

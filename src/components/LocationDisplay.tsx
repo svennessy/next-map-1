@@ -32,10 +32,14 @@ export const LocationDisplay: React.FC<ModalProps> = ({
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-black/70 z-40" />
+
+      {/* Modal content */}
       <div
         ref={modalRef}
-        className="bg-white flex flex-col items-center justify-center rounded-lg shadow-xl p-6 w-full max-w-md "
+        className="relative z-50  bg-neutral-900 rounded-lg shadow-xl p-6 w-full max-w-md flex flex-col items-center justify-center"
       >
         {children}
       </div>

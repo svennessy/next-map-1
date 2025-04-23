@@ -1,5 +1,5 @@
 // import Link from "next/link"
-import MapRender from "./mapRender"
+import MapRender from "../../../components/map/MapRender"
 
 export const metadata = {
   title: "Map",

@@ -40,24 +40,21 @@ export default function Home() {
       {now && <DateTimeRender date={now} formatOptions={customFormatOptions} />}
 
       <div className="flex w-8/12 h-6/12 p-4 justify-center bg-cyan-600">
-
         <button
           onClick={() => setIsModalOpen(true)}
           className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
         >
-          Open Modal
+          Add a Marker
         </button>
 
         <LocationDisplay
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <h1>Modal Name</h1>
+          <h1>Click and drag to add marker</h1>
           <CoordinatesDisplay />
         </LocationDisplay>
-      
       </div>
     </div>
   )
 }
-

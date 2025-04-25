@@ -1,10 +1,13 @@
-// import Link from "next/link"
-import MapRender from "../../../components/map/MapRender"
+
+//import RenderScaledMap from "../../../components/map/RenderScaledMap"
+import MarkersPage from "@/components/map/MapComponent"
 
 export const metadata = {
   title: "Map",
 }
 
 export default async function Map() {
-  return <MapRender attributes={"flex w-full h-full"} />
+  return <MarkersPage />
 }
+
+{/* <RenderScaledMap attributes={"flex w-full h-full"} /> */}

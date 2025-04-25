@@ -10,6 +10,7 @@
     "drizzle:migrate": "drizzle-kit push"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
     "@tanstack/react-query": "^5.74.3",
     "drizzle-orm": "^0.41.0",
     "gl-matrix": "^3.4.3",

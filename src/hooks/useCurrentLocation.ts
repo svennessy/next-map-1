@@ -1,32 +1,24 @@
-import { useEffect, useState } from "react";
-
-type Coordinates = {
-  latitude: number;
-  longitude: number;
-} | null;
+import { useEffect, useState } from 'react'
 
 export function useCurrentLocation() {
-  const [coordinates, setCoordinates] = useState<Coordinates>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [coords, setCoords] = useState<[number, number] | null>(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      setError("Geolocation is not supported by your browser");
-      return;
+      setError('Geolocation is not supported')
+      return
     }
 
     navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setCoordinates({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude,
-        });
+      (pos) => {
+        setCoords([pos.coords.longitude, pos.coords.latitude])
       },
       (err) => {
-        setError(err.message);
+        setError(err.message)
       }
-    );
-  }, []);
+    )
+  }, [])
 
-  return { coordinates, error };
+  return { coords, error }
 }

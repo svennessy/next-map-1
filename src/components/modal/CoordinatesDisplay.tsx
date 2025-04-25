@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import MapRender from "./map/MapRender"
 
 export const CoordinatesDisplay: React.FC = () => {
   const [coords, setCoords] = useState<{ lat: number; lon: number } | null>(
@@ -38,15 +37,9 @@ export const CoordinatesDisplay: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex text-center p-4">
-        <p>Current Latitude: {coords.lat}</p>
-        <p>Current Longitude: {coords.lon}</p>
-      </div>
-
-      <div className="bg-green-400 flex w-96 h-96">
-        <MapRender attributes={"flex w-full h-full"} />
-      </div>
+    <div className="flex text-center p-4">
+      <p>Current Latitude: {coords.lat}</p>
+      <p>Current Longitude: {coords.lon}</p>
     </div>
   )
 }

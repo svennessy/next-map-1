@@ -6,12 +6,10 @@ Pages:
 3. - [x] Map with rendered markers
 
 Map Page:
-1. - [ ] Reusable map render component 
-2. - [x] Dynamic className 
-3. - [x] Determine lat/long on click
-4. - [x] Add marker based on clicked lat/long
-5. - [ ] Get pool of markers
-6. - [ ] Display pool of markerss
+1. - [x] Display full page map
+2. - [ ] Get all markers lat/long from db
+3. - [ ] Display all markers 
+4. - [ ] 
 
 Home Page:
 1. - [x] Modal that opens when add location is clicked
@@ -30,8 +28,15 @@ Modal for adding location to map:
 9. - [ ] Maybe add close button
 
 Map Component:
-1. - [ ] 
+1. - [x] Make scalable rendered component (dynamic classname)
 2. - [ ] 
+3. - [ ] 
+4. - [ ] 
+5. - [ ] 
+
+Marker Components:
+1. - [ ] On hover show info
+2. - [ ] Cluster when zoomed out
 3. - [ ] 
 4. - [ ] 
 5. - [ ] 

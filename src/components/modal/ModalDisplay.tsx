@@ -6,7 +6,7 @@ interface ModalProps {
   children: React.ReactNode
 }
 
-export const LocationDisplay: React.FC<ModalProps> = ({
+export const ModalDisplay: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   children,
@@ -39,7 +39,7 @@ export const LocationDisplay: React.FC<ModalProps> = ({
       {/* Modal content */}
       <div
         ref={modalRef}
-        className="relative z-50  bg-neutral-900 rounded-lg shadow-xl p-6 w-full max-w-md flex flex-col items-center justify-center"
+        className="relative z-50  bg-neutral-900 rounded-lg shadow-xl w-full max-w-lg h-full max-h-6/12 flex flex-col items-center justify-center"
       >
         {children}
       </div>

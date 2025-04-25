@@ -2,8 +2,10 @@
 
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { LocationDisplay } from "@/components/LocationDisplay"
-import { CoordinatesDisplay } from "@/components/CoordinatesDisplay"
+import { ModalDisplay } from "@/components/modal/ModalDisplay"
+import { CoordinatesDisplay } from "@/components/modal/CoordinatesDisplay"
+//import RenderScaledMap from "@/components/map/RenderScaledMap"
+import { MapTest } from "@/components/map/MapTest"
 import DateTimeRender from "@/components/DateTimeRender"
 
 // https://nextjs.org/learn/pages-router/data-fetching-implement-getstaticprops
@@ -47,13 +49,19 @@ export default function Home() {
           Add a Marker
         </button>
 
-        <LocationDisplay
+        <ModalDisplay
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         >
-          <h1>Click and drag to add marker</h1>
-          <CoordinatesDisplay />
-        </LocationDisplay>
+          <div className="pt-6 pl-6 pr-6 text-center">
+            <h1>Click and drag to add marker</h1>
+            <CoordinatesDisplay />
+          </div>
+
+          <MapTest />
+
+          {/* <RenderScaledMap attributes={"flex w-full h-full"} /> */}
+        </ModalDisplay>
       </div>
     </div>
   )

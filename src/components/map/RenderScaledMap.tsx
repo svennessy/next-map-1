@@ -6,7 +6,7 @@ interface MapProps {
   attributes: string
 }
 
-export default function MapRender({...props}: MapProps) {
+export default function RenderScaledMap({...props}: MapProps) {
   return (
     <div className={`${props.attributes}`}>
       <MapComponent />
